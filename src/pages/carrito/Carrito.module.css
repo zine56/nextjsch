@@ -1,0 +1,61 @@
+/* src/app/carrito/Carrito.module.css */
+.carrito {
+    padding: 16px;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .item h2 {
+    margin: 0;
+  }
+  
+  .item p {
+    margin: 0;
+  }
+  
+  .item input {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .item button {
+    padding: 8px 16px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .item button:hover {
+    background-color: #005bb5;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .actions button {
+    padding: 8px 16px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .actions button:hover {
+    background-color: #005bb5;
+  }
+  

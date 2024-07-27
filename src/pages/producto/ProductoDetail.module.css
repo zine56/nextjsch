@@ -1,0 +1,73 @@
+/* src/pages/producto/ProductoDetail.module.css */
+
+.producto {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .producto h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .producto img {
+    border-radius: 10px;
+  }
+  
+  .producto p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .precio {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e91e63;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .actions input {
+    width: 50px;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 10px;
+  }
+  
+  .actions button {
+    padding: 10px 20px;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .actions button:hover {
+    background-color: #005bb5;
+  }
+  
+  .counter-button {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .counter-button:hover {
+    background-color: #e0e0e0;
+  }
+  
