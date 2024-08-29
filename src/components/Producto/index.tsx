@@ -2,18 +2,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Producto.module.css';
+import { ProductoType } from '@/interfaces/ProductoType';
 
-interface ProductoProps {
-  producto: {
-    id: number;
-    nombre: string;
-    descripcion: string;
-    precio: number;
-    imagen: string;
-  };
-}
 
-export default function Producto({ producto }: ProductoProps) {
+
+export default function Producto({producto}:{producto: ProductoType}) {
+  console.log(producto);
   return (
     <div className={styles.producto}>
       <Link href={`/producto/${producto.id}`}>

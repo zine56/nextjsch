@@ -1,6 +1,5 @@
 // src/pages/producto.tsx
 import MainLayout from '../layouts/MainLayout';
-import { productos } from '../../data/mockData';
 import Producto from '../components/Producto';
 
 export default function ProductoPage() {
