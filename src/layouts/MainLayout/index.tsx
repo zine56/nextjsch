@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useCart } from '../../context/CartContext';
 import styles from './MainLayout.module.css';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../firebaseConfig'; // Asegúrate de que esta sea la ruta correcta a tu configuración de Firebase
+import { db } from '../../../firebaseConfig';
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -45,7 +45,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   }, []);
 
   if (loading) {
-    return <div>Cargando...</div>; // O usa un componente Loader aquí
+    return <div>Cargando...</div>;
   }
 
   if (error) {
@@ -55,23 +55,29 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1>Mi Tienda</h1>
-        <nav>
-          <ul className={styles.navList}>
-            {categories.map((category) => (
-              <li key={category.id} className={styles.navItem}>
-                <Link href={`/category/${category.link}`}>
-                  {category.nombre}
+        <div className={styles.headerContent}>
+          <nav className={styles.nav}>
+            <ul className={styles.navList}>
+              <li className={styles.navItem}>
+                <Link href="/">
+                  Mi Tienda
                 </Link>
               </li>
-            ))}
-          </ul>
-        </nav>
-        <Link href="/carrito">
-          🛒 ({cart.reduce((total, item) => total + item.cantidad, 0)})
-        </Link>
+              {categories.map((category) => (
+                <li key={category.id} className={styles.navItem}>
+                  <Link href={`/category/${category.link}`}>
+                    {category.nombre}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <Link href="/carrito" className={styles.cartLink}>
+            🛒 <span className={styles.cartCount}>({cart.reduce((total, item) => total + item.cantidad, 0)})</span>
+          </Link>
+        </div>
       </header>
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <p>Todos los derechos reservados &copy; 2024</p>
       </footer>

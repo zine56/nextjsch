@@ -4,4 +4,5 @@ export interface ProductoType {
       descripcion: string;
       precio: string;
       imagen: string;
+      category?: string;
   }
