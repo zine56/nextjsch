@@ -71,3 +71,34 @@
     background-color: #e0e0e0;
   }
   
+  .variantsContainer {
+    margin-top: 20px;
+    border: 2px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .variantsTitle {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .variantLabel {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .variantRadio {
+    margin-right: 10px;
+  }
+  
+  .variantText {
+    font-size: 16px;
+  }
+  
+  .variantRadio:checked + .variantText {
+    font-weight: bold;
+    color: #0070f3;
+  }

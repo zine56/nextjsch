@@ -5,6 +5,8 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../../firebaseConfig';
 import { ProductoType } from '@/interfaces/ProductoType';
 import Catalogo from '../catalogo';
+import MainLayout from '@/layouts/MainLayout';
+import Head from 'next/head';
 
 interface Category {
   id: string;
@@ -23,10 +25,18 @@ export default function CategoryPage({ category, products }: CategoryPageProps) 
   }
 
   return (
-    <div>
-      <h1>{category.nombre}</h1>
-      <Catalogo productos={products} />
-    </div>
+    <>
+      <Head>
+        <title>{category.nombre} | Nuestra Tienda</title>
+        <meta name="description" content={`Explora nuestra selección de productos en la categoría ${category.nombre}.`} />
+      </Head>
+      <MainLayout>
+        <div>
+          <h1>{category.nombre}</h1>
+          <Catalogo productos={products} categorias={[category.link]}/>
+        </div>
+      </MainLayout>
+    </>
   );
 }
 
