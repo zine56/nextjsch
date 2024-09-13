@@ -16,7 +16,7 @@ interface CatalogoProps {
   categorias: string[];
 }
 
-export default function Catalogo({ productos, categorias }: CatalogoProps) {
+export default function Catalogo({ productos = [], categorias = [] }: CatalogoProps) {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState<string>('');
 
   const productosFiltrados = categoriaSeleccionada && categoriaSeleccionada !== 'Todas'
@@ -66,7 +66,7 @@ export async function getStaticProps() {
     precio: doc.data().price,
     imagen: doc.data().image,
     category: doc.data().category,
-    variants: doc.data().variants.length > 0 ? doc.data().variants.map((variant: VariantType) => ({
+    variants: doc.data().variants && Array.isArray(doc.data().variants) ? doc.data().variants.map((variant: VariantType) => ({
       id: variant.id,
       size: variant.size,
       color: variant.color,
